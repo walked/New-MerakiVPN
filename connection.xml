@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<connection>
+  <vpn>
+    <name>VPN Name</name>
+    <psk>PRESHARED KEY</psk>
+    <endpoint>IP or Hostname Endpoint</endpoint>
+    <tunnel>true</tunnel>
+  </vpn>
+  <subnets>
+    <subnet>
+      <network>192.168.88.0/24</network>
+    </subnet>
+    <subnet>
+      <network>192.168.99.0/24</network>
+     </subnet>
+  </subnets>
+</connection>

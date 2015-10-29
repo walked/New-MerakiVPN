@@ -20,14 +20,15 @@ function Main{
     {
         if($splitTunnel){
             Add-VpnConnection -L2tpPsk $vpnPsk -name $vpnName -ServerAddress $vpnEndpoint -AllUserConnection -AuthenticationMethod Pap -TunnelType L2tp -SplitTunneling -Force
+                
+            foreach ($sn in $xdoc.connection.subnets.ChildNodes) {
+                Add-VpnConnectionRoute -AllUserConnection -ConnectionName $vpnName -DestinationPrefix $sn.network 
         }
         else{
-            Add-VpnConnection -L2tpPsk $vpnPsk -name $vpnName -ServerAddress $vpnEndpoint -AllUserConnection -AuthenticationMethod Pap -TunnelType L2tp -Force
+            Add-VpnConnection -L2tpPsk $vpnPsk -name $vpnName -ServerAddress $vpnEndpoint -AllUserConnection -AuthenticationMethod Pap -TunnelType L2tp -Force 
         }
     }
-    
-    foreach ($sn in $xdoc.connection.subnets.ChildNodes) {
-        Add-VpnConnectionRoute -AllUserConnection -ConnectionName $vpnName -DestinationPrefix $sn.network
+
     }
 }
 

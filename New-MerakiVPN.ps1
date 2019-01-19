@@ -12,7 +12,7 @@ function Main
 {
     <#
         .SYNOPSIS
-        Main function for MerakiVPN.ps1
+        Main function for MerakiVPN.ps1 
         .DESCRIPTION
         Due to the sequential loading of PowerShell this function encapsulates the main program logic and is called at the very end of the script file to kick it off.
 
